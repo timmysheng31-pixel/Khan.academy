@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>我的游戏平台 - 首页</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">MyGames</div>
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="搜索游戏、标签..." />
+    </div>
+    <nav class="categories" id="categoryNav">
+      <button class="cat-btn active" data-cat="all">全部</button>
+      <button class="cat-btn" data-cat="action">动作</button>
+      <button class="cat-btn" data-cat="puzzle">解谜</button>
+      <button class="cat-btn" data-cat="platform">平台</button>
+      <button class="cat-btn" data-cat="endless">无尽</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-left">
+      <h1>欢迎来到 MyGames</h1>
+      <p>展示你自己或别人的 HTML5 / WebGL 游戏。点击“Play”即可在页面中试玩。</p>
+    </div>
+    <div class="hero-right">
+      <button id="featuredPlay" class="play-btn" data-game="games/sample1/index.html">试玩示例游戏</button>
+    </div>
+  </section>
+
+  <section class="game-grid" id="gameGrid">
+    <!-- 示例游戏卡片：将来可以由后端 API 渲染或由 JS 动态生成 -->
+    <article class="game-card" data-title="像素跳跃" data-tags="platform,action" data-cat="platform">
+      <div class="thumb" style="background-image:linear-gradient(135deg,#f6d365,#fda085)"></div>
+      <h3 class="game-title">像素跳跃</h3>
+      <div class="meta">平台 · 轻度动作</div>
+      <div class="card-actions">
+        <button class="play-btn" data-game="games/pixel-jump/index.html">Play</button>
+        <button class="info-btn">详情</button>
+      </div>
+    </article>
+
+    <article class="game-card" data-title="方块消除" data-tags="puzzle,casual" data-cat="puzzle">
+      <div class="thumb" style="background-image:linear-gradient(135deg,#a18cd1,#fbc2eb)"></div>
+      <h3 class="game-title">方块消除</h3>
+      <div class="meta">解谜 · 休闲</div>
+      <div class="card-actions">
+        <button class="play-btn" data-game="games/block-match/index.html">Play</button>
+        <button class="info-btn">详情</button>
+      </div>
+    </article>
+
+    <article class="game-card" data-title="极速跑者" data-tags="endless,action" data-cat="endless">
+      <div class="thumb" style="background-image:linear-gradient(135deg,#89f7fe,#66a6ff)"></div>
+      <h3 class="game-title">极速跑者</h3>
+      <div class="meta">无尽 · 反应</div>
+      <div class="card-actions">
+        <button class="play-btn" data-game="games/runner/index.html">Play</button>
+        <button class="info-btn">详情</button>
+      </div>
+    </article>
+
+    <!-- 可复制上面模板增加更多卡片 -->
+  </section>
+</main>
+
+<!-- 播放弹窗（iframe） -->
+<div id="playerModal" class="modal hidden" aria-hidden="true">
+  <div class="modal-inner">
+    <button id="closeModal" class="modal-close">×</button>
+    <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2025 MyGames. 本站用于演示。将游戏文件放在 /games/{name}/index.html 即可嵌入。</small>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
